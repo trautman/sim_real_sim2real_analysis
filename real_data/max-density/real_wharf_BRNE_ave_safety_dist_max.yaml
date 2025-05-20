@@ -1,0 +1,8 @@
+site: WHARF
+state: Real
+baseline: BRNE
+metric: Ave Safety Dist
+mean: [1.557, 1.392, 1.318, 1.246, 1.135]
+std: [0.28, 0.193, 0.157, 0.163, 0.075]
+N: [87, 75, 29, 8, 2]
+bin: [0.25, 0.55, 0.8, 1.1, 1.35]

@@ -1,0 +1,8 @@
+site: PERKS
+state: Real
+baseline: Teleop
+metric: Min Dist To Person
+mean: [1.622, 0.749]
+std: [0.0, 0.207]
+N: [1, 7]
+bin: [0.25, 0.55]

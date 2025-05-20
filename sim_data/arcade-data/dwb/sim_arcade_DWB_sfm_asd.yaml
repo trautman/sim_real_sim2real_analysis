@@ -1,0 +1,8 @@
+site: Arcade
+state: IDLab PUPP ON
+baseline: DWA
+metric: Ave Safety Distance
+mean: [1.385, 1.365, 1.38, 1.382, 1.406, 1.405]
+std:  [0.111, 0.056, 0.057, 0.042, 0.03, 0.042]
+N:    [156, 69, 34, 28, 5, 4]
+bin:  [0., 0.05, 0.1, 0.15, 0.2, 0.25]

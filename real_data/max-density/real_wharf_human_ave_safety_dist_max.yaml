@@ -1,0 +1,28 @@
+site: Wharf
+state: Real
+baseline: Human
+metric: Ave Safety Distance
+mean:
+- 0.891
+- 1.012
+- 0.991
+- 1.026
+- 0.984
+std:
+- 0.469
+- 0.304
+- 0.244
+- 0.226
+- 0.167
+N:
+- 203
+- 326
+- 207
+- 43
+- 11
+bin:
+- 0.0
+- 0.25
+- 0.55
+- 0.8
+- 1.1

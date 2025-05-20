@@ -1,0 +1,8 @@
+site: WHARF
+state: Real
+baseline: Teleop
+metric: Min Dist To Person
+mean: [2.518, 1.389, 0.937, 0.761, 0.905, 0.515]
+std: [0.441, 0.328, 0.294, 0.294, 0.219, 0.0]
+N: [30, 71, 46, 18, 3, 1]
+bin: [0.0, 0.25, 0.55, 0.8, 1.1, 1.65]

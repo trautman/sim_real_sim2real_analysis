@@ -1,0 +1,8 @@
+site: PERKS
+state: Real
+baseline: Teleop
+metric: Ave Safety Dist
+mean: [1.678, 1.334]
+std: [0.0, 0.09]
+N: [1, 7]
+bin: [0.25, 0.55]

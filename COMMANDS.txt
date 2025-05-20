@@ -1,0 +1,75 @@
+
+python ../../compare_sim2real_4_environments.py ../../real_data/mean-density/real_arcade_BRNE_ave_translational_velocity_mean.yaml sim_arcade_BRNE_IDLAB_PUPP_TRUE_velocity.yaml sim_arcade_BRNE_SFM_velocity.yaml sim_arcade_BRNE_ORCA_translational_velocity.yaml
+
+python ../../compare_sim2real_4_environments.py ../../real_data/mean-density/real_arcade_BRNE_average_safety_distance_mean.yaml sim_arcade_BRNE_IDLAB_PUPP_TRUE_asd.yaml sim_arcade_BRNE_SFM_asd.yaml sim_arcade_BRNE_ORCA_average_safety_distance.yaml
+
+
+python ../../compare_sim2real_4_environments.py ../../real_data/mean-density/real_arcade_BRNE_min_distance_to_person_mean.yaml sim_arcade_BRNE_IDLAB_PUPP_TRUE_mdp.yaml sim_arcade_BRNE_SFM_mdp.yaml sim_arcade_BRNE_ORCA_min_safety_distance.yaml
+
+path length
+
+total time
+
+
+
+
+
+
+
+
+
+
+
+
+===================COMPARE SIM2REAL
+python compare_sim2real.py sim_data/sim_arcade_BRNE_min_distance_to_person.yaml real_data/mean-density/real_arcade_BRNE_min_distance_to_person_mean.yaml
+
+
+===============COMPARE SITES
+python compare_sites.py real_data/mean-density/real_arcade_BRNE_min_distance_to_person_mean.yaml real_data/mean-density/real_wharf_BRNE_min_distance_to_person_mean.yaml real_data/mean-density/real_perks_BRNE_min_distance_to_person_mean.yaml
+
+
+===================ONLY DIFFERENCE BETWEEN MEAN AND MAX IS FILE NAME=========
+
+==========================================
+====COMPARE 4 BASELINES VS MAX DENSITY:
+--In Dropbox/work/projects/harmonious-navigation/2024/papers/field-study/analysis-code/sim_real_sim2real_analysis/real_data/max-independent-variable
+-python ../../compare_baselines.py real_arcade_BRNE_ave_safety_dist_max.yaml real_arcade_DWB_ave_safety_dist_max.yaml real_arcade_human_ave_safety_dist_max.yaml real_arcade_teleop_ave_safety_dist_max.yaml
+-python3 ../../compare_baselines.py real_arcade_*_min_dist_to_person_max.yaml
+and for e.g. average safety distance
+
+==========================================
+====COMPARE 4 BASELINES VS MEAN DENSITY: 
+--In Dropbox/work/projects/harmonious-navigation/2024/papers/field-study/analysis-code/sim_real_sim2real_analysis/real_data/mean-density
+-python3 ../../compare_baselines.py real_arcade_BRNE_min_distance_to_person_mean.yaml real_arcade_DWB_min_distance_to_person_mean.yaml real_arcade_human_min_distance_to_person_mean.yaml real_arcade_teleop_min_distance_to_person_mean.yaml
+-python3 ../../compare_baselines.py real_arcade_*_min_distance_to_person_mean.yaml
+
+
+
+
+==========================================
+=====COMPARE 3 SITES MEAN DENSITY:
+--In Dropbox/work/projects/harmonious-navigation/2024/papers/field-study/analysis-code/sim_real_sim2real_analysis/real_data/mean-density
+-python3 ../../compare_sites.py real_arcade_BRNE_min_distance_to_person_mean.yaml real_perks_BRNE_min_distance_to_person_mean.yaml real_wharf_BRNE_min_distance_to_person_mean.yaml
+-python3 ../../compare_sites.py real_*_BRNE_min_distance_to_person_mean.yaml
+
+
+
+==========================================
+=====COMPARE 3 SITES MAX DENSITY:
+--In Dropbox/work/projects/harmonious-navigation/2024/papers/field-study/analysis-code/sim_real_sim2real_analysis/real_data/max-density
+-python3 ../../compare_sites.py real_arcade_BRNE_min_dist_to_person_max.yaml real_perks_BRNE_min_dist_to_person_max.yaml real_wharf_BRNE_min_dist_to_person_max.yaml
+-python3 ../../compare_sites.py real_*_BRNE_min_dist_to_person_max.yaml
+
+
+==========================================
+====COMPARE SIM2REAL MEAN DENSITY:
+--In Dropbox/work/projects/harmonious-navigation/2024/papers/field-study/analysis-code/sim_real_sim2real_analysis
+python3 compare_sim2real.py sim_data/sim_arcade_BRNE_min_distance_to_person.yaml real_data/mean-density/real_arcade_BRNE_min_distance_to_person_mean.yaml
+
+
+
+
+
+
+

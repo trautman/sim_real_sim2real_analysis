@@ -1,0 +1,8 @@
+site: Arcade
+state: Real
+baseline: Teleop
+metric: Min Dist To Person
+mean: [1.951, 1.35, 0.88, 0.75, 0.585]
+std: [1.205, 0.369, 0.31, 0.229, 0.281]
+N: [42, 96, 100, 39, 11]
+bin: [0.0, 0.25, 0.55, 0.8, 1.1]

@@ -1,0 +1,8 @@
+site: PERKS
+state: Real
+baseline: Teleop
+metric: Efficiency
+mean: [1.006, 1.001]
+std: [0.0, 0.004]
+N: [1, 7]
+bin: [0.25, 0.55]

@@ -1,0 +1,8 @@
+site: Arcade
+state: Real
+baseline: Teleop
+metric: Velocity
+mean: [0.576, 0.606, 0.592, 0.565, 0.551]
+std: [0.114, 0.072, 0.078, 0.097, 0.065]
+N: [42, 96, 100, 39, 11]
+bin: [0.0, 0.25, 0.55, 0.8, 1.1]

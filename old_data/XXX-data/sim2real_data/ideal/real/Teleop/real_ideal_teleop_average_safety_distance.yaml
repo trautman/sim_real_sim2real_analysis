@@ -1,0 +1,9 @@
+---
+site: Ideal
+state: Real
+baseline: Teleop
+metric: Ave Safety Distance
+mean: [1.525, 1.327, 1.315, 1.27, 1.186, 1.197]
+std: [0.283, 0.185, 0.216, 0.13, 0.0, 0.0]
+N: [78, 41, 14, 4, 1, 1]
+bin: [0.0, 0.05, 0.1,  0.15, 0.2,  0.25]

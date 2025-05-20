@@ -1,0 +1,28 @@
+site: Perks
+state: Real
+baseline: Human
+metric: Ave Translational Velocity
+mean:
+- 1.335
+- 1.238
+- 1.217
+- 1.019
+- 0.859
+std:
+- 0.263
+- 0.35
+- 0.397
+- 0.534
+- 0.514
+N:
+- 67
+- 128
+- 114
+- 32
+- 8
+bin:
+- 0.0
+- 0.25
+- 0.55
+- 0.8
+- 1.1
