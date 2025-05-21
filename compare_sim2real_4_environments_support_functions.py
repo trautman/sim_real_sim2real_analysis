@@ -686,18 +686,16 @@ def error_and_line_fit_g(
                          f"$\\Delta_{{gap}}={round(s_g_brne_teleop, 2)}"
                          f"\\Delta g/\\Delta \\rho$, "
                          f"$r={r_g_brne_teleop}$")
-            # linebrneteleop, = plt.plot(
-            #     b_3[:index_bt],
-            #     i_g_brne_teleop + s_g_brne_teleop * b_3[:index_bt],
-            #     'k--',
-            #     linewidth=regression_linewidth,
-            #     label=label_teleop,
-            #     color='green'
-            # )
             x_line = np.linspace(cutoff_left, b_4[-1], 200)
             y_line = i_g_brne_teleop + s_g_brne_teleop * x_line
+            # linebrneteleop, = ax.plot(
+            #     x_line, y_line,
+            #     '--', linewidth=regression_linewidth,
+            #     color='green', clip_on=True,
+            #     label=label_teleop
+            # )
             linebrneteleop, = ax.plot(
-                x_line, y_line,
+                [], [],
                 '--', linewidth=regression_linewidth,
                 color='green', clip_on=True,
                 label=label_teleop
@@ -740,13 +738,13 @@ def error_and_line_fit_g(
             [cutoff_left, bin_clip],
             [0.5, 0.5],
             color='k', linestyle='-', lw=3.0,
-            label='$g>0.5$ Sim2real gap not closed'
+            label=r'$\Delta>0.5$ Sim2real gap not closed'
         )
         thresholdlower, = ax.plot(
             [cutoff_left, bin_clip],
             [-0.5, -0.5],
             color='k', linestyle='-', lw=3.0,
-            label='$g<-0.5$ Sim2real gap not closed'
+            label=r'$\Delta<-0.5$ Sim2real gap not closed'
         )
 
         threshold_handles.extend([thresholdupper, thresholdlower])
@@ -819,7 +817,7 @@ def error_and_line_fit_g(
         ax.set_xlabel("Max Crowd Density (people$/m^2$)", fontsize=fontsize)
     else:
         ax.set_xlabel("Mean Crowd Density (people$/m^2$)", fontsize=fontsize)
-    ax.set_ylabel(f"{metric_1} Sim2Real Gap", fontsize=fontsize)
+    ax.set_ylabel(f"{metric_1} Sim2Real Gap $\\Delta$", fontsize=fontsize)
     ax.tick_params(axis='both', labelsize=xy_label_size)
     ax.set_xlim(cutoff_left, cutoff_right)
 
