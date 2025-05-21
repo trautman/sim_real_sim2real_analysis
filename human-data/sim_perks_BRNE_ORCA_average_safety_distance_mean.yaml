@@ -1,0 +1,8 @@
+site: Perks
+state: ORCA
+baseline: BRNE
+metric: Ave Safety Distance
+mean: [1.418, 1.54, 1.618, 1.726, 1.669, 1.618]
+std: [0.149, 0.114, 0.122, 0.093, 0.08, 0.071]
+N: [874, 76, 47, 23, 19, 24]
+bin: [0, 0.05, 0.1, 0.15, 0.2, 0.25]

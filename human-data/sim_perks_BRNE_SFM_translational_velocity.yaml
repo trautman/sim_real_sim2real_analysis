@@ -1,0 +1,8 @@
+site: Perks
+state: SFM
+baseline: BRNE
+metric: Translational Velocity
+mean: [3.564, 3.256, 3.429, 3.523, 3.541, 3.483]
+std: [0.256, 0.416, 0.267, 0.099, 0.092, 0.156]
+N: [367, 93, 14, 6, 4, 2]
+bin: [0, 0.05, 0.1, 0.15, 0.2, 0.25]

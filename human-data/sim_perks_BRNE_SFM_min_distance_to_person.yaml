@@ -1,0 +1,8 @@
+site: Perks
+state: SFM
+baseline: BRNE
+metric: Min Distance to Person
+mean: [1.286, 1.279, 1.255, 1.354, 1.351, 1.339]
+std: [0.119, 0.077, 0.093, 0.119, 0.098, 0.011]
+N: [367, 93, 14, 6, 4, 2]
+bin: [0, 0.05, 0.1, 0.15, 0.2, 0.25]

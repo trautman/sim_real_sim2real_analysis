@@ -1,0 +1,8 @@
+site: Perks
+state: SFM
+baseline: BRNE
+metric: Ave Safety Distance
+mean: [1.435, 1.46, 1.476, 1.646, 1.628, 1.686]
+std: [0.132, 0.122, 0.134, 0.118, 0.089, 0.017]
+N: [367, 93, 14, 6, 4, 2]
+bin: [0, 0.05, 0.1, 0.15, 0.2, 0.25]

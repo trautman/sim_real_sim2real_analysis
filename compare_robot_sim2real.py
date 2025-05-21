@@ -7,7 +7,7 @@ from scipy import stats
 import yaml
 import sys
 
-from  compare_sim2real_4_environments_support_functions\
+from  compare_robot_sim2real_support_functions\
 				import calling_data_files, hedges_g, lin_regress, ttest_p_distribution, \
 				error_and_line_fit_baseline, error_and_line_fit_g
 
