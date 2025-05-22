@@ -405,12 +405,12 @@ def error_and_line_fit_baseline(
         regression_handles.append(reg_line)
         # #############PRINT REGRESSION PARAMETERS 
         print(f"PERF {states[i]} "
-              f"p_l = {pearson_p[i]:.1f}, "
-              f"beta_0={intercepts[i]:.1f}, "
-              f"d_perf/d_rho= {slopes[i]:.1f}, "
-              f"r_l={pearson_r[i]:.1f}, "
-              f"p_m = {spearman_p[i]:.1f}"
-              f"r_m={spearman_r[i]:.1f}, ")
+              f"p_l = {pearson_p[i]:.2f}, "
+              f"beta_0={intercepts[i]:.2f}, "
+              f"d_perf/d_rho= {slopes[i]:.2f}, "
+              f"r_l={pearson_r[i]:.2f}, "
+              f"p_m = {spearman_p[i]:.2f}"
+              f"r_m={spearman_r[i]:.2f}, ")
 
         
 
@@ -627,12 +627,12 @@ def error_and_line_fit_g(
         regression_handles.append(linebrnedwb)
         # PRINT REGRESSION PARAMETERS BRNEVDWB
         print(f"SIM2REAL GAP {state_2} "
-            f"p_l^g={p_lin_g_brne_dwb:.1f} "
-            f"beta_0^g={i_g_brne_dwb:.1f}, "
-            f"d_gap/d_rho={s_g_brne_dwb:.1f}, "
-            f"r_l^g={r_g_brne_dwb:.1f}, "
-            f"p_m^g={p_g_spear_brne_dwb:.1f}"
-            f"r_m^g={r_g_spear_brne_dwb:.1f}, ")
+            f"p_l^g={p_lin_g_brne_dwb:.2f} "
+            f"beta_0^g={i_g_brne_dwb:.2f}, "
+            f"d_gap/d_rho={s_g_brne_dwb:.2f}, "
+            f"r_l^g={r_g_brne_dwb:.2f}, "
+            f"p_m^g={p_g_spear_brne_dwb:.2f}"
+            f"r_m^g={r_g_spear_brne_dwb:.2f}, ")
 
 
 
