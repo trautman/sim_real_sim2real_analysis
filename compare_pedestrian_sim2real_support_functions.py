@@ -101,7 +101,7 @@ def hedges_g(m_1, m_2, std_1, std_2, N_1, N_2, compare_name):
     # d = (m_1 - m_2) / s
     d = (m_1 - m_2)/std_1
     # d = (m_1 - m_2)
-    print('std 1 inside', std_1)
+    # print('std 1 inside', std_1)
     # 3) J‐correction → Hedges' g (still full precision)
     J = 1 - (3 / (4*(N_1 + N_2) - 9))
     # g = J * d
@@ -769,7 +769,7 @@ def error_and_line_fit_g(
         #                 [thresholdupper.get_label(), thresholdlower.get_label()]
         #
         handles = error_handles + threshold_handles
-        bin_label = f'{{}}' #FOR CI HANDLES
+        bin_label = f'{{}} pedestrians' #FOR CI HANDLES
         labels = [
             bin_label.format(state_2),
             bin_label.format(state_3),

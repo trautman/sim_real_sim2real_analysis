@@ -6,6 +6,7 @@ import numpy as np
 from scipy import stats
 import yaml
 import sys
+import os
 
 from  compare_robot_sim2real_support_functions\
 				import calling_data_files, hedges_g, lin_regress, ttest_p_distribution, \
@@ -13,6 +14,40 @@ from  compare_robot_sim2real_support_functions\
 
 # BRNE 1 DWB 2 human 3 teleop 4
 if __name__ == "__main__":
+
+# BATCH CHANGES
+
+	# no_display = False
+	# if "--no-display" in sys.argv:
+	#     no_display = True
+	#     sys.argv.remove("--no-display")
+
+	# ——— pull out our two new flags ———
+	no_display = False
+	label     = "robot"             # default
+
+	# rebuild argv so positions 1–4 stay valid
+	pos_args = []
+	i = 1
+	while i < len(sys.argv):
+	    if sys.argv[i] == "--no-display":
+	        no_display = True
+	        i += 1
+	    elif sys.argv[i] == "--label" and i+1 < len(sys.argv):
+	        label = sys.argv[i+1]
+	        i += 2
+	    else:
+	        pos_args.append(sys.argv[i])
+	        i += 1
+
+	if len(pos_args) != 4:
+	    print("Usage: compare_pedestrian_sim2real.py [--no-display] [--label ped|robot] REAL_YAML SIM1_YAML SIM2_YAML SIM3_YAML", file=sys.stderr)
+	    sys.exit(1)
+
+	# overwrite sys.argv so that the rest of your script sees pos_args as the four files:
+	sys.argv = [sys.argv[0]] + pos_args
+
+# BATCH CHANGES
 
 	# IMPORT DATA
 	site_1, state_1, name_1, metric_1, m_1, std_1, b_1, N_1, \
@@ -212,10 +247,95 @@ if __name__ == "__main__":
 	  performance_gap_title, ci_threshold, ci_linewidth, legend_location_g, \
 	  xy_label_size, sys.argv[1], bin_clip, cutoff_left, cutoff_right)
 
+	# fig1.tight_layout()
+	# fig2.tight_layout()
+	# plt.show()
+
+# BATCH CHANGES
+
+	# fig1.tight_layout()
+	# fig2.tight_layout()
+
+	# #––– save both plots into your cwd (wrapper’s out_dir) –––
+	# real_base = os.path.splitext(os.path.basename(sys.argv[1]))[0]
+	# sim_bases = [ os.path.splitext(os.path.basename(sys.argv[i]))[0]
+	#               for i in range(2,5) ]
+	# perf_fname = f"{real_base}__{sim_bases[0]}__{sim_bases[1]}__{sim_bases[2]}__perf.png"
+	# gap_fname  = f"{real_base}__{sim_bases[0]}__{sim_bases[1]}__{sim_bases[2]}__gap.png"
+
+	
+	# # fig1.savefig(perf_fname, bbox_inches='tight')
+	# # fig2.savefig( gap_fname, bbox_inches='tight')
+	# fig1.savefig(perf_fname, bbox_inches='tight')
+	# print(f"✅ saved: {os.path.abspath(perf_fname)}")
+	# fig2.savefig(gap_fname, bbox_inches='tight')
+	# print(f"✅ saved: {os.path.abspath(gap_fname)}")
+
+	# #––– only actually pop up the GUI if you didn’t ask --no-display –––
+	# if not no_display:
+	#     plt.show()
+	# ——— naming logic ———
+
+
+
+	# pull out our four file-paths:
+	real_fp = sys.argv[1]
+	sim_fps = sys.argv[2], sys.argv[3], sys.argv[4]
+
+	# 1) metric abbreviation map
+	METRIC_ABBR = {
+	    "average_safety_distance_mean": "asd",
+	    "min_distance_to_person":      "mdp",
+	    # … add more metrics here …
+	}
+
+	# parse components from the REAL filename:
+	real_base = os.path.basename(real_fp)[:-5]           # strip “.yaml”
+	_, site, robot, metric_long = real_base.split("_", 3)
+
+	abbr = METRIC_ABBR.get(metric_long, metric_long)
+
+	site  = site.lower()
+	robot = robot.lower()
+	lbl   = label.lower()
+
+	# build the sim-string by joining each sim‐type
+	sim_types = []
+	for sim in sim_fps:
+	    sim_base = os.path.basename(sim)[:-5]
+	    parts    = sim_base.split("_", 4)
+	    # parts == ["sim", site, robot, simtype, metric_long]
+	    sim_types.append(parts[3].lower())
+
+	sim_concat = "_".join(sim_types)
+
+	# full filename:
+	out_fname = f"{abbr}_{site}_{lbl}_{robot}_{sim_concat}.png"
+
+	# ——— save with pre-flight checks ———
 	fig1.tight_layout()
 	fig2.tight_layout()
-	plt.show()
 
+	for fig, kind in ((fig1, "perf"), (fig2, "gap")):
+	    fname = out_fname.replace(".png", f"_{kind}.png") if kind in ("perf","gap") else out_fname
+	    # 1) fail if already exists
+	    if os.path.exists(fname):
+	        print(f"❌ Error: file '{fname}' already exists; not overwriting.", file=sys.stderr)
+	        sys.exit(1)
+	    # 2) try to save
+	    try:
+	        fig.savefig(fname, bbox_inches="tight")
+	    except Exception as e:
+	        print(f"❌ Error saving '{fname}': {e}", file=sys.stderr)
+	        sys.exit(1)
+	    else:
+	        print(f"✅ saved: {os.path.abspath(fname)}")
+
+	# only pop up the GUI if they didn’t ask --no-display
+	if not no_display:
+	    plt.show()
+
+# BATCH CHANGES
 
 
 # LEGEND LOCATIONS
