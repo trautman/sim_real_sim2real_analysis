@@ -1,39 +1,4 @@
-
-# Sim2Real Analysis Toolkit
-
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](#)
-
 A command-line toolkit for comparing simulated and real-world performance of robotic and pedestrian navigation systems. Includes tools for evaluating performance metrics, plotting baseline comparisons, and quantifying sim2real gaps.
-
----
-
-## 📦 Installation
-
-1. Clone this repository:
-
-```bash
-git clone https://github.com/your-org/sim2real-analysis.git
-cd sim2real-analysis
-```
-
-2. Create a Python environment (optional but recommended):
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-3. Install required dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-> Requires Python >= 3.8
-
----
 
 ## 📁 Folder Structure
 
@@ -57,6 +22,25 @@ sim2real-analysis/
 
 ## 🚀 Usage
 
+
+
+### 📊 Pedestrian/Robot Sim2Real Comparison
+
+```bash
+python compare_pedestrian_sim2real.py --label ped --no-display <REAL_YAML> <SIM1_YAML> <SIM2_YAML> <SIM3_YAML>
+*compares real Santa Cruz pedestrians and pedestrians simulated using IDLab, ORCA, and SFM
+python compare_robot_sim2real.py --label robot --no-display <REAL_YAML> <SIM1_YAML> <SIM2_YAML> <SIM3_YAML>
+*compares real robot performance (e.g. robot in real world) compared to robot performance in IDLab-, ORCA-, or SFM-based pedestrian simulation environments 
+```
+
+#### Output
+
+* `mdp_arcade_ped_brne_idlab_sfm_orca_perf.png`
+* `mdp_arcade_ped_brne_idlab_sfm_orca_gap.png`
+
+---
+
+
 ### 🔁 Batch Compare (All YAMLs in folder)
 
 ```bash
@@ -66,20 +50,7 @@ python batch_compare.py --label robot <input_yaml_dir> <output_fig_dir>
 
 * Runs `compare_pedestrian_sim2real.py` or `compare_robot_sim2real.py`
 * Auto-pairs `real_*.yaml` with matching `sim_*.yaml`
-
----
-
-### 📊 Pedestrian/Robot Sim2Real Comparison
-
-```bash
-python compare_pedestrian_sim2real.py --label ped --no-display <REAL_YAML> <SIM1_YAML> <SIM2_YAML> <SIM3_YAML>
-python compare_robot_sim2real.py --label robot --no-display <REAL_YAML> <SIM1_YAML> <SIM2_YAML> <SIM3_YAML>
-```
-
-#### Output
-
-* `mdp_arcade_ped_brne_idlab_sfm_orca_perf.png`
-* `mdp_arcade_ped_brne_idlab_sfm_orca_gap.png`
+* Outputs figures comparing average safety distance, min distance to person, path efficiency, total time, and translational velocity, organized by density bin, with mean +/- 95% CI in each bin, linear regression; second plot compares gap between BRNE and other robot algorithms and between sim2real gap of real world brne performance and 3 different simulators (ORCA, IDLab, SFM).
 
 ---
 
