@@ -13,12 +13,11 @@ compares real Santa Cruz pedestrians with pedestrians simulated using IDLab, ORC
 
 For example
 ```bash
-python compare_pedestrian_sim2real.py --label ped human-data/real_arcade_BRNE_average_safety_distance_mean.yaml human-data/sim_arcade_BRNE_IDLab_average_safety_distance_mean.yaml human-data/sim_arcade_BRNE_ORCA_average_safety_distance_mean.yaml human-data/sim_arcade_BRNE_SFM_average_safety_distance_mean.yaml
+python compare_pedestrian_sim2real.py --label ped real-data/real_arcade_human_average_safety_distance_mean.yaml human-data/sim_arcade_BRNE_IDLab_average_safety_distance_mean.yaml human-data/sim_arcade_BRNE_ORCA_average_safety_distance_mean.yaml human-data/sim_arcade_BRNE_SFM_average_safety_distance_mean.yaml
 ```
-which will create and display two figures in the pwd, namely  
-####Sample output
-*asd_arcade_ped_brne_idlab_orca_sfm_gap.png
-*asd_arcade_ped_brne_idlab_orca_sfm_perf.png
+where, for example, sim_arcade_BRNE_IDLab_metric.yaml is the BRNE robot in the IDLab pedestrian environment.  This will create and display two figures in the pwd, namely  
+-asd_arcade_ped_brne_idlab_orca_sfm_gap.png
+-asd_arcade_ped_brne_idlab_orca_sfm_perf.png
 
 
 
@@ -29,7 +28,11 @@ python compare_robot_sim2real.py --label robot --no-display <REAL_YAML> <SIM1_YA
 ```
 compares real robot performance (e.g. robot in real world) compared to robot performance in IDLab-, ORCA-, or SFM-based pedestrian simulation environments. 
 
-
+For example
+```bash
+ python compare_robot_sim2real.py robot-data/arcade/real_arcade_BRNE_average_safety_distance.yaml robot-data/arcade/sim_arcade_BRNE_IDLab_average_safety_distance.yaml robot-data/arcade/sim_arcade_BRNE_ORCA_average_safety_distance.yaml robot-data/arcade/sim_arcade_BRNE_SFM_average_safety_distance.yaml
+```
+where, for example, sim_arcade_BRNE_ORCA_* is simulated BRNE running against ORCA pedestrians.
 
 ---
 
