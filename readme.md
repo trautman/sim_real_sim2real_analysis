@@ -28,10 +28,13 @@ sim2real-analysis/
 
 ```bash
 python compare_pedestrian_sim2real.py --label ped --no-display <REAL_YAML> <SIM1_YAML> <SIM2_YAML> <SIM3_YAML>
--compares real Santa Cruz pedestrians and pedestrians simulated using IDLab, ORCA, and SFM
-python compare_robot_sim2real.py --label robot --no-display <REAL_YAML> <SIM1_YAML> <SIM2_YAML> <SIM3_YAML>
--compares real robot performance (e.g. robot in real world) compared to robot performance in IDLab-, ORCA-, or SFM-based pedestrian simulation environments 
 ```
+-compares real Santa Cruz pedestrians and pedestrians simulated using IDLab, ORCA, and SFM
+
+```bash
+python compare_robot_sim2real.py --label robot --no-display <REAL_YAML> <SIM1_YAML> <SIM2_YAML> <SIM3_YAML>
+```
+-compares real robot performance (e.g. robot in real world) compared to robot performance in IDLab-, ORCA-, or SFM-based pedestrian simulation environments 
 
 #### Output
 
