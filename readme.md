@@ -25,16 +25,22 @@ sim2real-analysis/
 
 
 ### 📊 Pedestrian/Robot Sim2Real Comparison
-
+The command
 ```bash
 python compare_pedestrian_sim2real.py --label ped --no-display <REAL_YAML> <SIM1_YAML> <SIM2_YAML> <SIM3_YAML>
 ```
--compares real Santa Cruz pedestrians and pedestrians simulated using IDLab, ORCA, and SFM
+compares real Santa Cruz pedestrians with pedestrians simulated using IDLab, ORCA, and SFM. For example
+```bash
+python compare_pedestrian_sim2real.py --label ped human-data/real_arcade_BRNE_average_safety_distance_mean.yaml human-data/sim_arcade_BRNE_IDLab_average_safety_distance_mean.yaml human-data/sim_arcade_BRNE_ORCA_average_safety_distance_mean.yaml human-data/sim_arcade_BRNE_SFM_average_safety_distance_mean.yaml
+```
+which will create and display two figures in the pwd.  
 
+
+The command
 ```bash
 python compare_robot_sim2real.py --label robot --no-display <REAL_YAML> <SIM1_YAML> <SIM2_YAML> <SIM3_YAML>
 ```
--compares real robot performance (e.g. robot in real world) compared to robot performance in IDLab-, ORCA-, or SFM-based pedestrian simulation environments 
+compares real robot performance (e.g. robot in real world) compared to robot performance in IDLab-, ORCA-, or SFM-based pedestrian simulation environments. 
 
 #### Output
 
