@@ -1,27 +1,7 @@
 A command-line toolkit for comparing simulated and real-world performance of robotic and pedestrian navigation systems. Includes tools for evaluating performance metrics, plotting baseline comparisons, and quantifying sim2real gaps.
 
-## 📁 Folder Structure
-
-```
-sim2real-analysis/
-├── batch_compare.py
-├── compare_baselines.py
-├── compare_sites.py
-├── compare_sim2real.py
-├── compare_pedestrian_sim2real.py
-├── compare_robot_sim2real.py
-├── *_support_functions.py
-├── real_data/
-│   ├── mean-density/
-│   └── max-density/
-├── sim_data/
-└── output_figures/
-```
-
----
 
 ## 🚀 Usage
-
 
 
 ### 📊 Pedestrian/Robot Sim2Real Comparison
@@ -29,11 +9,18 @@ The command
 ```bash
 python compare_pedestrian_sim2real.py --label ped --no-display <REAL_YAML> <SIM1_YAML> <SIM2_YAML> <SIM3_YAML>
 ```
-compares real Santa Cruz pedestrians with pedestrians simulated using IDLab, ORCA, and SFM. For example
+compares real Santa Cruz pedestrians with pedestrians simulated using IDLab, ORCA, and SFM. 
+
+For example
 ```bash
 python compare_pedestrian_sim2real.py --label ped human-data/real_arcade_BRNE_average_safety_distance_mean.yaml human-data/sim_arcade_BRNE_IDLab_average_safety_distance_mean.yaml human-data/sim_arcade_BRNE_ORCA_average_safety_distance_mean.yaml human-data/sim_arcade_BRNE_SFM_average_safety_distance_mean.yaml
 ```
-which will create and display two figures in the pwd.  
+which will create and display two figures in the pwd, namely  
+####Sample output
+*asd_arcade_ped_brne_idlab_orca_sfm_gap.png
+*asd_arcade_ped_brne_idlab_orca_sfm_perf.png
+
+
 
 
 The command
@@ -42,10 +29,7 @@ python compare_robot_sim2real.py --label robot --no-display <REAL_YAML> <SIM1_YA
 ```
 compares real robot performance (e.g. robot in real world) compared to robot performance in IDLab-, ORCA-, or SFM-based pedestrian simulation environments. 
 
-#### Output
 
-* `mdp_arcade_ped_brne_idlab_sfm_orca_perf.png`
-* `mdp_arcade_ped_brne_idlab_sfm_orca_gap.png`
 
 ---
 
